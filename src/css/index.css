@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'Covik Sans Mono';
+  src: url('./src/fonts/Covik_Sans_Mono-Regular.woff2') format('woff2'),
+       url('./src/fonts/Covik_Sans_Mono-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Covik Sans Mono';
+  src: url('./src/fonts/Covik_Sans_Mono-Bold.woff2') format('woff2'),
+       url('./src/fonts/Covik_Sans_Mono-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Repeat for each font file. */
+
+body {
+  /* ... */
+  font-family: 'Covik Sans Mono', monospace; /* use your custom font, with a fallback */
+}
+
+.title {
+  font-family: 'Covik Sans Mono', monospace;
+  font-size: 3.5em;
+  font-weight: bold; /* this should now select the correct font file */
+  /* font-style: bold; <--- remove this line; 'bold' is not a valid value for font-style */
+  /* ... */
+}
+
+p {
+  font-family: 'Covik Sans Mono', monospace;
+  font-size: 1.5em;
+  font-weight: 900; /* this should now select the correct font file */
+  padding: 25px;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ... rest of your CSS ... */
+
+body {
+  margin: 0;
+  background: #ffb70f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px; /* adjust as needed */
+}
+
+.title {
+  font-family:'Covik Sans', monospace;
+  font-size: 3.5em;
+  font-weight: 900;
+  font-style: bold;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* adjust as needed */
+  animation: move 2s infinite;
+}
+
+.container {
+  transform: perspective(1000px) rotateX(40deg) rotateY(0deg) rotateZ(-35deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+*
+        {
+            transition: 200ms ease-in-out;
+        }
+.pointer-cursor
+{
+  cursor: pointer;
+}
+
+.container
+{
+  transform: perspective(1000px) rotateX(40deg)         rotateY(0deg) rotateZ(-35deg);
+}
+
+.d1
+{
+  border-radius: 25px;
+  border: 5px solid #161616;
+  width: 170px;
+  background: #ffb70f;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d2
+{
+  border-radius: 25px;
+  border: 5px solid #161616;
+  background: #161616;
+  width: 170px;
+  height: 80px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+  box-shadow: -20px 25px 30px 10px hsla(0, 0%, 0%, 0.198);
+  transform: perspective(1000px) translateY(-50px) translateZ(-100px) translateX(-35px);
+}
+
+.d1:active + .d2
+{
+  box-shadow: -20px 25px 20px 10px hsla(0, 0%, 0%, 0.198);
+}
+.d1:active
+{
+  transform: perspective(1000px) translateY(25px) translateZ(-37px) translateX(-15px);
+}
+
+/* Media query for smaller screens (like phones) */
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 2em; /* make the title smaller */
+  }
+
+  .d1, .d2 {
+    width: 150px; /* make the buttons smaller */
+    height: 70px;
+  }
+
+  /* additional adjustments as needed... */
+}
+
