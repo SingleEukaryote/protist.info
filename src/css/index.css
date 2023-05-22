@@ -14,6 +14,14 @@
   font-style: normal;
 }
 
+@keyframes move {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
 /* Repeat for each font file. */
 
 body {
@@ -43,7 +51,7 @@ p {
 
 body {
   margin: 0;
-  background: #ffb70f;
+  background: #94f49e;
   display: flex;
   flex-direction: column;
   align-items: center;
