@@ -76,6 +76,8 @@ body {
   user-select: none;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* adjust as needed */
   animation: move 2s infinite;
+  color: #000; /* or any color that you prefer */
+  text-decoration: none; /* removes underline */
 }
 
 .container {
@@ -130,23 +132,11 @@ body {
 .d1:active + .d2
 {
   box-shadow: -20px 25px 20px 10px hsla(0, 0%, 0%, 0.198);
+  background-color: rgb(255, 248, 47); /* Change color when active; adjust as needed */
+
 }
 .d1:active
 {
   transform: perspective(1000px) translateY(25px) translateZ(-37px) translateX(-15px);
-}
-
-/* Media query for smaller screens (like phones) */
-@media screen and (max-width: 600px) {
-  .title {
-    font-size: 2em; /* make the title smaller */
-  }
-
-  .d1, .d2 {
-    width: 150px; /* make the buttons smaller */
-    height: 70px;
-  }
-
-  /* additional adjustments as needed... */
 }
 
